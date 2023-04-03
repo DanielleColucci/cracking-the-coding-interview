@@ -51,6 +51,26 @@ const urlify = (str) => {
       // input: Tact Coa
       // ouput: True (permutations: 'taco cat', 'atco cta', etc)
 
+const palindromePerm = (str) => {
+  // count each occurrence of each letter
+  const tracker = str.toLowerCase().split('').reduce((acc, c) => {
+    if (acc[c]) acc[c]++
+    else acc[c] = 1
+    return acc
+  }, {})
+
+  // iterate through the char tracker and count how many chars have an odd number of occurrences
+  let oddCount = 0
+  for (let char in tracker) {
+    if (char >= 'a' && char <= 'z' && tracker[char] % 2) oddCount++
+  }
+
+  // if oddCount is greater than 1, then the string cannot be a palindrome 
+  if (oddCount > 1) return false
+  else return true
+}
+
+console.log(palindromePerm('tact Coa'))
 // 5. There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given a string, write a function to check if they are one edit (or zero edits) away 
     // EXAMPLE: 
       // pale, ple --> True
