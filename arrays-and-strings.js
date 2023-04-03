@@ -23,7 +23,17 @@ const uniqueChars2 = (str) => {
   return true
 }
 
-// 2. given two strings, wrwite a method to decide if one is a permutation of the other 
+// 2. given two strings, write a method to decide if one is a permutation of the other 
+
+const checkPermutation = (s1, s2) => {
+  if (s1.length !== s2.length) return false
+  s1 = s1.split('').sort().join('')
+  s2 = s2.split('').sort().join('')
+  if (s1 === s2) return true
+  else return false
+}
+
+console.log(checkPermutation('abcc', 'bca'))
 
 // 3. write a method to replace all spaces in a string with '%20.' You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the "true" length of the string 
     // EXAMPLE: 
