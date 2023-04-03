@@ -33,12 +33,18 @@ const checkPermutation = (s1, s2) => {
   else return false
 }
 
-console.log(checkPermutation('abcc', 'bca'))
-
 // 3. write a method to replace all spaces in a string with '%20.' You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the "true" length of the string 
     // EXAMPLE: 
       // input: 'Mr John Smith    '
       // output: 'Mr%20John%20Smith'
+
+// O(n)
+const urlify = (str) => {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ' ') str = str.slice(0, i) + '%20' + str.slice(i + 1, str.length - 2)
+  }
+  return str
+}
 
 // 4. given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words. You can ignore casing and non-letter characters
     // EXAMPLE: 
