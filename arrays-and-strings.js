@@ -70,13 +70,48 @@ const palindromePerm = (str) => {
   else return true
 }
 
-console.log(palindromePerm('tact Coa'))
-// 5. There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given a string, write a function to check if they are one edit (or zero edits) away 
+
+// 5. There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away 
     // EXAMPLE: 
       // pale, ple --> True
       // pales, pale --> True
       // pale, bale --> True, 
       // pale, bake --> False 
+
+const oneAway = (s1, s2) => {
+  if (s1.length === s2.length) {
+    return checkReplace(s1, s2)
+  } else if (s1.length - s2.length === 1) {
+    return checkInsert(s1, s2)
+  } else if (s2.length - s1.length === 1) {
+    return checkInsert(s2, s1)
+  }
+  else return false
+}
+
+function checkReplace(s1, s2) {
+  let count = 0
+    for (let i = 0; i < s1.length; i++) {
+      if (s1[i] !== s2[i]) count++
+    } 
+    return count === 1
+}
+
+function checkInsert(s1, s2) {
+  let i = 0, j = 0
+  while (i < s1.length && j < s2.length) {
+    if (s1[i] !== s2[j]) {
+      i++
+    } else {
+      i++ 
+      j++
+    }
+  }
+  return i - j === 1
+}
+
+console.log(oneAway('bale', 'bake'))
+
 
 // 6. Implement a method to perform basic string compression using the counts of repeated characters. For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the compressed string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters.
 
