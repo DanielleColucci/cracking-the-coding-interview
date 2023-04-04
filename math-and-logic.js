@@ -12,7 +12,15 @@
     // Game 2: You get three shots and you have to make two of three shots
     // If p is the probability of making a particular shot, for which values of p should you pick one game or the other?
 
-// 3. There is an 8x8 chessboard in which two diagonally opposite corners have been cut off. You are given 31 dominos, and a single domino can cover exactly two squares. Can you use the 31 dominos to cover the entire board? Provde your answer (by providing an example or showing why it is impossible)
+// 3. There is an 8x8 chessboard in which two diagonally opposite corners have been cut off. You are given 31 dominos, and a single domino can cover exactly two squares. Can you use the 31 dominos to cover the entire board? Provide your answer (by providing an example or showing why it is impossible)
+
+  // Well first of all 8 x 8 - 2 (the area of the board) is 62 which is 2 * 31 (or the total area of all the dominos)
+  // When you remove the opposite corners, you are either removing 2 white or 2 black squares (for the case of explanation, I'll say we're removing 2 white squares, but note that the logic also works in the other direction, thus covering each scenario). 
+  // Removing 2 white squares leaves 30 white squares and 32 black squares.
+  // A domino must cover exactly one white and exactly one black square (because it must cover 2 two adjacent squares which alternate colors)
+  // Therefore, in order for the dominos to perfectly cover the board, they would need to cover the same number of white squares as black squares (1 and 1 per domino)
+  // Since there are 2 more black squares than white squares, in any configuration, there will always be 2 non-adjacent black squares left uncovered.
+  // So no, this is not possible
 
 // 4. There are three ants on different vertices of a triangle. What is the probability of collision (between any two or all of them) if they start walking on the sides of the triangle? Assume that each ant randomly picks a direction, with either direction being equally likely to be chosen, and that they walk at the same speed 
 
