@@ -24,7 +24,15 @@
 
 // 4. There are three ants on different vertices of a triangle. What is the probability of collision (between any two or all of them) if they start walking on the sides of the triangle? Assume that each ant randomly picks a direction, with either direction being equally likely to be chosen, and that they walk at the same speed 
 
-// 5. You have a five quart jug, a three quart jug, and an unlimited supply of water (but no measuring cups). How would you come up with exactly four quarts of water? Note that the jugs are oddle shaped, such that filling up exactly "half" of the jug would be impossible
+// 5. You have a five quart jug, a three quart jug, and an unlimited supply of water (but no measuring cups). How would you come up with exactly four quarts of water? Note that the jugs are oddly shaped, such that filling up exactly "half" of the jug would be impossible
+
+  // Fill the five quart jug. 
+  // Use that to fill the three quart jug (5 holds 2 and 3 holds 3)
+  // Empty the three quart jug (5 holds 2 and 3 holds 0)
+  // Pour the contents of the five quart jug into the 3 quart jug (5 holds 0 and 3 holds 2)
+  // Fill the five quart jug again (5 holds 5 and 3 holds 2)
+  // Then use the five quart jug to top off the three quart jug (5 holds 4 and 3 holds 3)
+  // Now you have 4 quarts in the five quart jug. 
 
 // 6. A bunch of people are living on an island, when a visitor comes with  strange order: all blue-eyed people must leave the island as soon as possible. There will be flight out at 8:00pm every evening. Each person can see everyone else's eye color, but they do not know their own (nor is anyone allowed to tell them). Additionally, they do not know how many people have blue eyes, although they do know that at least one person does. How many days will it take the blue-eyed people to leave.
 
