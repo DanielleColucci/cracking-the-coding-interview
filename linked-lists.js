@@ -1,6 +1,20 @@
 // 1. Write code to remove duplicates from an unsorted linked lists
     // How would you solve this problem if a temporary buffer is not allowed?
 
+function removeDups(head) {
+  let current = head
+  let previous
+  let visited = []
+  while (current.next) {
+    visited.push[current]
+    if (visited.includes(current)) {
+      previous.next = current.next
+      previous = current
+      current = current.next
+    }
+  }
+}
+
 // 2. Implement an algorithm to find the kth to last element of a singly linked list
 
 // 3. Implement an algorithm to delete a node in the middle (i.e., any node but the first and last node, not necessarily the exact middle) of a singly linked list, given only access to that node
