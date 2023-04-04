@@ -1,5 +1,12 @@
 // 1. You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills of weight 1.1 grams. Given a scale that provides an exact measurement, how would you find the heavy bottle? You can only use the scale once. 
 
+  // we know we have to weigh pills from multiple bottles at the same time since we can only use the scale once. 
+  // we can take advantage of grabbing different numbers of pills from each bottle. 
+  // say you took 1 pill from bottle 1, 2 pills from bottle 2, 3 pills from bottle 3, ... , 19 pills from bottle 19, and 20 pills from bottle 20 
+  // you would expect the result to be 1 + 2 + 3 + ... + 19 + 20 = 210 g 
+  // Then anything over would be the result of 1.1 g pills. So if take the excess, (total weight - 210) and divide by 0.1, you have the number of 1.1 g pills that were added, and therefore the bottle that it came from 
+    // i.e. say the total weight was 210.6, that is 0.6 g more than expected, so you know that bottle 6 has the 1.1 g pills
+
 // 2. You have a basketball hoop and someone says that you can play one of two games. 
     // Game 1: You get one shot to make the hoop
     // Game 2: You get three shots and you have to make two of three shots
